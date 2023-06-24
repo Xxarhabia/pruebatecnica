@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -40,23 +40,24 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Crea una cuenta</h1>
                             </div>
-                            <form class="user">
+
+                            <form th:action="@{/guardar}" method="post" class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input th:field="*{nombreUsuario}" type="text" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder="Nombre" required>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                        <input th:field="*{apellidoUsuario}" type="text" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="Apellido" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input th:field="*{email}" type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Correo electronico" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user"
+                                    <input th:field="*{passwrord}" type="password" class="form-control form-control-user"
                                     id="exampleInputPassword" placeholder="Contraseña">
                                 </div>
                                 <div class="form-group">
